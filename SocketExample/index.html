@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            //Connect to server using sockets
+            var io = io.connect();
+            //send message to server
+            io.emit('ready');
+            //wait message from server
+            io.on('message',function(data){
+                alert(data.message);
+            });
+        </script>
+        <title>Socket example</title>
+    </head>
+    <body>
+        
+    </body>
+</html>
