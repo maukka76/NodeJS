@@ -9,6 +9,13 @@ app.io.route('ready',function(req){
     
 });
 
+app.io.route('new_message',function(req){
+    //Send response to client
+    console.log("req:" + req.data);
+    req.io.broadcast('message',req.data);
+    
+});
+
 app.get('/',function(req,res){
     
     res.sendfile('index.html');
